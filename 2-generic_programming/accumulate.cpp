@@ -1,5 +1,7 @@
 #include <iostream>
-#include <bits/stdc++.h>
+#include <vector>
+#include <list>
+#include <set>
 
 template <class InputIterator>
 typename InputIterator::value_type accumulate(InputIterator first, InputIterator last) {

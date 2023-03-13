@@ -2,10 +2,12 @@
 1.Polimorfizm dynamiczny - czyli możliwość decydowania o tym jaka funkcja zostanie wywołana pod daną nazwą
 nie w momencie kompilacji (czyli pisania kodu), ale w samym momecie wywołania.
 
-2.Polimorfizm statyczny: to kompilator zadecyduje na podstawie typu tablicy jaką funkcję draw wywołać.
+2.Polimorfizm statyczny: to kompilator zadecyduje na podstawie typu tablicy jaką funkcję  wywołać.
     
 3.Klasa Shape jest klasą abstrakcyjną, ponieważ zawiera niezaimplementowaną wirtualną czystą fukcję void draw()
 np. virtual void draw() = 0;
 W C++ klasą abstrakcyjną jest klasa, która posiada zadeklarowaną co najmniej jedną metodę czysto wirtualną.
 Każda klasa, która dziedziczy po klasie abstrakcyjnej i sama nie chce być abstrakcyjną, 
 musi implementować wszystkie odziedziczone metody czysto wirtualne.
+
+4.Metoda wirtualna (funkcja wirtualna) to metoda, której wywołanie jest polimorficzne. 
