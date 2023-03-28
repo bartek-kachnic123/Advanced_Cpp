@@ -51,8 +51,9 @@ sum(IT beg,IT end) {
 
 int main() {
     std::vector<int> v1 = {1, 2, 3};
-
+    double tab[] = {1.1, 1.2, 1.3};
     std::cout << sum(v1.begin(), v1.end()) << std::endl;
+    std::cout << sum(tab, &tab[3]) << std::endl;
 
     return 0;
 }
