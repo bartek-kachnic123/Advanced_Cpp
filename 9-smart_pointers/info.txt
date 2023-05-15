@@ -1,0 +1,5 @@
+unique_ptr - inteligenty skladnik , ktrego zadaniem jest automatyczne zwolnienie
+pamieci. Moze miec tylko 1 wlascisciela, czyli jeden wskaznik wzkazujacy na 1 miejsce w pamieci.
+
+shared_ptr - moze miec wielu wlascicieli. Przydzielona pamiec zostanie automatycznie zwolniona, gdy ostatni
+z nich przestaje istniec.
