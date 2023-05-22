@@ -23,7 +23,7 @@ int main() {
   });  
   auto end = std::chrono::steady_clock::now();
 
-  std::cout << std::chrono::duration_cast<std::chrono::milliseconds>(end-begin).count() << std::endl;
+  std::cout << std::chrono::duration_cast<std::chrono::milliseconds>(end-begin).count() << " ms"  << std::endl;
   
 
 
@@ -35,7 +35,7 @@ int main() {
   });  
   end = std::chrono::steady_clock::now();
 
-  std::cout << std::chrono::duration_cast<std::chrono::milliseconds>(end-begin).count() << std::endl;
+  std::cout << std::chrono::duration_cast<std::chrono::milliseconds>(end-begin).count() << " ms" <<std::endl;
 
   return 0;
 }  
