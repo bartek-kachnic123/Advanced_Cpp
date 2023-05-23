@@ -1,0 +1,39 @@
+std::execution::sequenced_policy - obiekt std::execution::seq
+
+Jeden wątek (ten, w którym został wywołany algorytm) wykonuje 
+wszystkie zadania sekwencyjnie w pewnej kolejności, która nie 
+jest ściśle zdefiniowana i może być z każdym wywołaniem inna. 
+W szczególności, nie ma gwarancji, że kolejność wykonywania 
+operacji będzie taka sama jak w wersji algorytmu bez wytycznej.
+
+
+std::execution::parallel_policy - obiekt std::execution::par
+Wiele wątków może wykonywać współbieżnie zadania (multithreading)
+Zadania w obrębie swojego wątku roboczego są wykonywane sekwencyjnie 
+w zadanej(lecz nieokreślonej) kolejności, bez przeplotu 
+(not-interleaved) => wszystkie zadania muszą być thread safe
+Istnieje możliwość użycia konstrukcji synchronizujących współbieżny 
+dostęp do danych (np. std::mutex, std::atomic<T>)
+
+std::execution::par_unseq
+Zadania mogą być wykonywane z wykorzystaniem wielowątkowości
+ (multithreading) i współbieżności wektorowej (np. OpenMP)
+Zadania mogą być:
+wykonywane w różnej kolejności w różnych wątkach
+przemieszane (interleaved) w ramach konkretnego wątku 
+(np. druga operacja zostanie transferowane między wątkami 
+(zadanie rozpoczęte w wątku nr 1, może kontynuować pracę
+w wątku nr 2 i zakończyć działanie w wątku nr 3) rozpoczęta 
+zanim pierwsza zostanie ukończona).
+
+W rezultacie:
+wywołania operacji synchronizujących (np. mutex::lock())
+grożą zakleszczeniem
+nie można używać dynamicznej alokacji i dealokacji pamięci
+operacje (funkcje)
+wykonywane przez algorytm muszą operować tylko na zadanym 
+elemencie kolekcji i nie mogą modyfikować jakiegokolwiek 
+współdzielonego stanu pomiędzy wątkami lub elementami sekwencji
+
+
+z https://infotraining.bitbucket.io/cpp-17/parallel-stl.html
